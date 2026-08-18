@@ -17,3 +17,6 @@
 &size_l_transform {
     col-offset = <7>;
 };
+&pointing_listener {
+    automouse-layer = <3>;
+};
