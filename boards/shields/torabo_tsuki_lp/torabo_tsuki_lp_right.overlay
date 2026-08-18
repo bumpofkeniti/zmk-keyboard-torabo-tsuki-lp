@@ -2,10 +2,16 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
+/* もともとある設定の書き換え */
 &pointing_listener {
     input-processors = 
         <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
         <&zip_temp_layer 5 1500>;
+};
+
+/* エラーの原因になっている古い命令を、空っぽにして無効化（上書き）する */
+/ {
+    /delete-property/ automouse-layer;
 };
 
 &size_s_transform {
