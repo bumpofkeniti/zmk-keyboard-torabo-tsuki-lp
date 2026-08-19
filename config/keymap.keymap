@@ -43,42 +43,42 @@
             label = "P1";
         };
 
-        P1: P1 {
+        AGV1: P1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N1 &kp A &kp G &kp V &kp POUND>;
             label = "P1";
         };
 
-        P2: P2 {
+        AGV2: P2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N6 &kp A &kp G &kp V &kp POUND>;
             label = "P2";
         };
 
-        P3: P3 {
+        AGV3: P3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N7 &kp A &kp G &kp V &kp POUND>;
             label = "P3";
         };
 
-        P4: P4 {
+        AGV4: P4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N8 &kp A &kp G &kp V &kp POUND>;
             label = "P4";
         };
 
-        P5: P5 {
+        AGV5: P5 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N9 &kp A &kp G &kp V &kp POUND>;
             label = "P5";
         };
 
-        P6: P6 {
+        AGV6: P6 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N0 &kp A &kp G &kp V &kp POUND>;
@@ -131,7 +131,7 @@
 
         layer_4 {
             bindings = <
-&PITID  &kp TAB  &birth  &PIT    &ID     &P1                     &P2     &P3     &P4     &P5     &P6     &trans
+&PITID  &kp TAB  &birth  &PIT    &ID     &AGV1                   &AGV2   &AGV3   &AGV4   &AGV5   &AGV6   &trans
 &trans  &trans   &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
