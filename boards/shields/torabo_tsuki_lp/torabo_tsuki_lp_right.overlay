@@ -7,6 +7,12 @@
     input-processors = 
         <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
         <&zip_temp_layer 5 1500>;
+
+    /* 👇 ここから追加：レイヤー3のときだけスクロールにする設定 */
+    scroller {
+        layers = <3>;
+        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 1>;
+    };
 };
 
 /* エラーの原因になっている古い命令を、空っぽにして無効化（上書き）する */
