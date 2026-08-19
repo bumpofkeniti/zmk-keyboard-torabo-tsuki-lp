@@ -39,7 +39,7 @@
         ID: macro_id {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp N5 &kp N0 &kp N8 &kp N5 &kp N3 &kp N5 &kp N0 &0>;
+            bindings = <&kp N5 &kp N0 &kp N8 &kp N5 &kp N3 &kp N5 &kp N0>;
             label = "P1";
         };
 
@@ -76,13 +76,6 @@
             #binding-cells = <0>;
             bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N9 &kp A &kp G &kp V &kp POUND>;
             label = "P5";
-        };
-
-        AGV6: P6 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N0 &kp A &kp G &kp V &kp POUND>;
-            label = "P6";
         };
     };
 
