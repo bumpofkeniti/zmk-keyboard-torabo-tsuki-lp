@@ -15,63 +15,63 @@
     };
 
     macros {
-        PITID: PIT {
+        PITID: PITID {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(P) &kp LS(I) &kp LS(T) &kp N0 &kp N4 &kp N0 &kp N1 &kp N1 &kp AT &kp B &kp P &kp R &kp DOT &kp B &kp T &kp M &kp DOT &kp C &kp O &kp DOT &kp J &kp P>;
             label = "PIT";
         };
 
-        birth: pass {
+        birth: birth {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp N8 &kp N6 &kp N0 &kp N2 &kp N2 &kp N1>;
             label = "PASS";
         };
 
-        PIT: macro_pit {
+        PIT: PIT {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(P) &kp LS(I) &kp LS(T) &kp N0 &kp N4 &kp N0 &kp N1 &kp N1>;
             label = "P1";
         };
 
-        ID: macro_id {
+        ID: ID {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp N5 &kp N0 &kp N8 &kp N5 &kp N3 &kp N5 &kp N0>;
             label = "P1";
         };
 
-        AGV1: macro_agv1 {
+        AGV1: AGV1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N1 &kp A &kp G &kp V &kp POUND>;
             label = "P1";
         };
 
-        AGV2: P2 {
+        AGV2: AGV2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N6 &kp A &kp G &kp V &kp POUND>;
             label = "P2";
         };
 
-        AGV3: P3 {
+        AGV3: AGV3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N7 &kp A &kp G &kp V &kp POUND>;
             label = "P3";
         };
 
-        AGV4: P4 {
+        AGV4: AGV4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N8 &kp A &kp G &kp V &kp POUND>;
             label = "P4";
         };
 
-        AGV5: P5 {
+        AGV5: AGV5 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N9 &kp A &kp G &kp V &kp POUND>;
