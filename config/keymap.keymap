@@ -18,8 +18,15 @@
         PIT: PIT {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp LS(P) &kp LS(I) &kp LS(T) &kp N0 &kp N4 &kp N0 &kp N1 &kp N1 &kp AT &kp B &kp P &kp R &kp DOT &kp B &kp T &kp M &kp DOT &kp C &kp O &kp DOT &kp J &kp P>;
+            bindings = <&kp LS(P) &kp LS(I) &kp LS(T) &kp N0 &kp N4 &kp N0 &kp N1 &kp N1 &kp AT &kp B &kp P &kp R &kp DOT &kp B &kp T &kp M &kp DOT &kp C &kp O &kp DOT &kp J &kp P>;
             label = "PIT";
+        };
+
+        birth: pass {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N8 &kp N6 &kp N0 &kp N2 &kp N2 &kp N1>;
+            label = "PASS";
         };
     };
 
