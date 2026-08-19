@@ -15,7 +15,7 @@
     };
 
     macros {
-        PIT: PIT {
+        PITID: PIT {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(P) &kp LS(I) &kp LS(T) &kp N0 &kp N4 &kp N0 &kp N1 &kp N1 &kp AT &kp B &kp P &kp R &kp DOT &kp B &kp T &kp M &kp DOT &kp C &kp O &kp DOT &kp J &kp P>;
@@ -27,6 +27,62 @@
             #binding-cells = <0>;
             bindings = <&kp N8 &kp N6 &kp N0 &kp N2 &kp N2 &kp N1>;
             label = "PASS";
+        };
+
+        PIT: P1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(P) &kp LS(I) &kp LS(T) &kp N0 &kp N4 &kp N0 &kp N1 &kp N1>;
+            label = "P1";
+        };
+
+        ID: P1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N5 &kp N0 &kp N8 &kp N5 &kp N3 &kp N5 &kp N0 &kp N0>;
+            label = "P1";
+        };
+
+        P1: P1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N1 &kp A &kp G &kp V &kp POUND>;
+            label = "P1";
+        };
+
+        P2: P2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N6 &kp A &kp G &kp V &kp POUND>;
+            label = "P2";
+        };
+
+        P3: P3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N7 &kp A &kp G &kp V &kp POUND>;
+            label = "P3";
+        };
+
+        P4: P4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N8 &kp A &kp G &kp V &kp POUND>;
+            label = "P4";
+        };
+
+        P5: P5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N9 &kp A &kp G &kp V &kp POUND>;
+            label = "P5";
+        };
+
+        P6: P6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N0 &kp A &kp G &kp V &kp POUND>;
+            label = "P6";
         };
     };
 
@@ -75,11 +131,11 @@
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&PITID  &kp TAB  &birth  &PIT    &ID     &P1                     &P2     &P3     &P4     &P5     &P6     &trans
+&trans  &trans   &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
