@@ -1,2 +1,7 @@
 
 #include "../../../config/keymap.keymap"
+
+&input_listener {
+    x-scalars = <1 2>;
+    y-scalars = <1 2>;
+};
