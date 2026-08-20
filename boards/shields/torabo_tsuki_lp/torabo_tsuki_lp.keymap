@@ -1,5 +1,5 @@
 #include "../../../config/keymap.keymap"
 
-&pd_listener {
+&input_listener_0 {
     input-processors = <&zip_xy_scaler 1 2>;
 };
