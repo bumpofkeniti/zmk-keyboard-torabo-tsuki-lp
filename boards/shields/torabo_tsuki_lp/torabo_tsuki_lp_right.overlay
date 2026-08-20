@@ -12,7 +12,7 @@
     /* レイヤー3のときだけスクロールにする設定 */
     scroller {
         layers = <3>;
-        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 2>; /* 👈 スクロール速度を半分に落とす設定 */
+        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 4>; /* 👈 スクロール速度を4分の1に落とす設定 */
     };
 };
 
