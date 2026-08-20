@@ -159,4 +159,6 @@
             >;
         };
     };
+/* トラックボールの減速設定 (速度を1/2にします) */
+&trackball_listener {input-processors = <&zip_xy_scaler 1 2>;
 };
