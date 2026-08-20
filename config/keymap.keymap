@@ -71,7 +71,7 @@ label = "P5";
 AGV6: AGV6 {
 compatible = "zmk,behavior-macro";
 #binding-cells = <0>;
-bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 & N0 &kp A &kp G &kp V &kp POUND>;
+bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N0 &kp A &kp G &kp V &kp POUND>;
 label = "AGV6";
 };
 };
@@ -143,4 +143,9 @@ bindings = <
 >;
 };
 };
+}; 
+
+&input_listener {
+x-scalars = <1 2>;
+y-scalars = <1 2>;
 };
