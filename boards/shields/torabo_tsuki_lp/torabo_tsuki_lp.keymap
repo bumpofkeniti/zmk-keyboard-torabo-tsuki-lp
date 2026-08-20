@@ -1,5 +1,8 @@
 #include "../../../config/keymap.keymap"
 
-&input_listener_0 {
+/* 右手側（中央・トラックボール搭載側）のビルド時のみ減速を適用する */
+#if !defined(SHIELD_TORABO_TSUKI_LP_LEFT)
+&input_listener {
     input-processors = <&zip_xy_scaler 1 2>;
 };
+#endif
