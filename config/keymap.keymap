@@ -47,7 +47,6 @@ ID: ID {
 AGV1: AGV1 {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
-    bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N1 &kp A &自由な割り当て &kp V &kp POUND>;
     bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N1 &kp A &kp G &kp V &kp POUND>;
     label = "P1";
 };
