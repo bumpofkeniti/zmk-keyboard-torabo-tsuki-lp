@@ -47,6 +47,7 @@ ID: ID {
 AGV1: AGV1 {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
+    bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N1 &kp A &自由な割り当て &kp V &kp POUND>;
     bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N1 &kp A &kp G &kp V &kp POUND>;
     label = "P1";
 };
@@ -169,7 +170,7 @@ layer_6 {
 };
 }; 
 
-/* とらぼ月LP用のトラックボール減速設定（1/2に制限） */
+/* とらぼ月LP用：ルートノードの外側に追記（1/2減速） */
 &input_listener {
 input-processors = <&zip_xy_scaler 1 2>;
 };
