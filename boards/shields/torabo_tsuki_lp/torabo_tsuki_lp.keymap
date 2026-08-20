@@ -1,8 +1,1 @@
 #include "../../../config/keymap.keymap"
-
-/* 左手ビルド時はスキップし、トラックボールを処理する右手ビルド時のみ安全に減速を適用する */
-#if !defined(SHIELD_TORABO_TSUKI_LP_LEFT) && !defined(torabo_tsuki_lp_left)
-&input_listener {
-    input-processors = <&zip_xy_scaler 1 2>;
-};
-#endif
