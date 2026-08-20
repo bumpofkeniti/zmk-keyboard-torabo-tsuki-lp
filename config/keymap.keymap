@@ -1,8 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
-#include <input/processors.dtsi> 
+#include <dt-bindings/zmk/pointing.h> 
 
 / {
 combos {
@@ -169,7 +168,8 @@ layer_6 {
 };
 }; 
 
-/* とらぼ月LP用：ルートノードの外側に追記（1/2減速） */
+/* とらぼ月LP用：干渉を防ぐため、マージ処理後にインクルードして速度を変更（1/2減速） */
+#include <input/processors.dtsi>
 &input_listener {
 input-processors = <&zip_xy_scaler 1 2>;
 };
