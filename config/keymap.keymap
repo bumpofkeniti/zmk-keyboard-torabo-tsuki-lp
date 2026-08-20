@@ -19,7 +19,6 @@ macros {
 PITID: PITID {
 compatible = "zmk,behavior-macro";
 #binding-cells = <0>;
-bindings = <&kp LS(P) &kp LS(I) &kp LS(T) &kp N0 &kp N4 &kp N0 &kp N1 &1>;
 bindings = <&kp LS(P) &kp LS(I) &kp LS(T) &kp N0 &kp N4 &kp N0 &kp N1 &kp N1 &kp AT &kp B &kp P &kp R &kp DOT &kp B &kp T &kp M &kp DOT &kp C &kp O &kp DOT &kp J &kp P>;
 label = "PIT";
 };
@@ -169,8 +168,8 @@ layer_6 {
 };
 }; 
 
-/* とらぼ月LP専用：親ファイルのインクルードが完全に閉じた「外側」でリスナーを上書き指定 */
-#include <input/processors.dtsi>
+/* 最新のZMKポインティング仕様に基づき、ルート外の最下部で安全にトラックボールを1/2減速に上書き */
 &input_listener {
-input-processors = <&zip_xy_scaler 1 2>;
+x-scalars = <1 2>;
+y-scalars = <1 2>;
 };
