@@ -7,8 +7,9 @@
     input-processors = 
         <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 
-    /* 👇 ここを分離：ちょっと触れただけではレイヤー5に行かないように防壁（2ピクセル以下の微振動をカット）を設置 */
+    /* 誤動作を防ぐ壁（1/2縮小）を挟みつつ、全レイヤーで発動するように修正 */
     automouse {
+        layers = <0 1 2 3 4 5>; /* 👈 エラー解決のために追加：全レイヤーを指定 */
         input-processors = <&zip_xy_scaler 1 2>, <&zip_temp_layer 5 1500>;
     };
 
@@ -19,7 +20,7 @@
     };
 };
 
-/* エラーの原因になっている古い命令を、空っぽにして無oggle化（上書き）する */
+/* エラーの原因になっている古い命令を、空っぽにして無効化（上書き）する */
 / {
     /delete-property/ automouse-layer;
 };
