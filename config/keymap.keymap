@@ -84,6 +84,13 @@
             bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N0 &kp A &kp G &kp V &kp POUND>;
             label = "AGV6";
         };
+
+        new_macro: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "NEW_MACRO";
+        };
     };
 
     keymap {
@@ -93,7 +100,7 @@
             bindings = <
 &none      &none         &none         &none  &none  &none                                                      &none        &none  &none      &none           &none                 &none
 &kp TAB    &kp Q         &kp W         &kp E  &kp R  &kp T                                                      &kp Y        &kp U  &kp I      &kp O           &kp P                 &kp BSPC
-&kp CAPS   &kp A         &kp S         &kp D  &kp F  &kp G      &none                 &none                     &kp H        &kp J  &kp K      &kp L           &kp NON_US_BACKSLASH  &kp ENTER
+&kp CAPS   &kp A         &kp S         &kp D  &kp F  &kp G      &none                 &none                     &kp H        &kp J  &kp K      &kp L           &kp NON_US_BACKSLASH  &lt 6 ENTER
 &kp LSHFT  &kp Z         &kp X         &kp C  &kp V  &kp B      &mo 3                 &mo 4                     &kp N        &kp M  &kp COMMA  &kp DOT         &kp UP_ARROW          &kp SLASH
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none  &none  &lt 1 DEL  &mt LANGUAGE_1 SPACE  &mt LANGUAGE_2 BACKSPACE  &lt 2 ENTER  &none  &none      &kp LEFT_ARROW  &kp DOWN              &kp RIGHT_ARROW
             >;
@@ -111,11 +118,11 @@
 
         layer_2 {
             bindings = <
-&trans        &trans        &trans           &trans           &trans           &trans                         &trans  &trans  &trans  &trans  &trans  &trans
-&kp CAPSLOCK  &kp PLUS      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LS(SLASH)                  &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_SEL 0  &kp MINUS     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp COLON      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_SEL 1  &kp ASTERISK  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_SEL 2  &kp EQUAL     &kp KP_NUMBER_0  &none            &trans           &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans        &trans        &trans           &trans           &trans           &trans                      &trans  &trans  &trans  &trans  &trans  &trans
+&kp CAPSLOCK  &kp PLUS      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp SLASH                   &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_SEL 0  &kp MINUS     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp COLON   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_SEL 1  &kp ASTERISK  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_SEL 2  &kp EQUAL     &kp KP_NUMBER_0  &none            &trans           &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
