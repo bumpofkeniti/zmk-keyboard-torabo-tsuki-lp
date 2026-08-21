@@ -7,10 +7,13 @@
     input-processors = 
         <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 
-    /* 誤動作を防ぐ壁（1/2縮小）を挟みつつ、全レイヤーで発動するように修正 */
+    /* 誤動作を防ぎつつ、動く向きも正しく修正 */
     automouse {
-        layers = <0 1 2 3 4 5>; /* 👈 エラー解決のために追加：全レイヤーを指定 */
-        input-processors = <&zip_xy_scaler 1 2>, <&zip_temp_layer 5 1500>;
+        layers = <0 1 2 3 4 5>;
+        input-processors = 
+            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, /* 👈 向きを正しく直す命令を追加 */
+            <&zip_xy_scaler 1 2>, 
+            <&zip_temp_layer 5 1500>;
     };
 
     /* レイヤー3のときだけスクロールにする設定 */
