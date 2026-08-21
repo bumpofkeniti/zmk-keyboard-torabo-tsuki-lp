@@ -7,15 +7,16 @@
     input-processors = 
         <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 
-    /* 👇 修正：最優先にするため、scroller（レイヤー6）の設定を一番上に持ってきました */
+    /* 最優先にするため、scroller（レイヤー6）の設定を一番上に配置 */
     scroller {
         layers = <6>;
-        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 1>;
+        /* 👇 修正：4分の1速度（0.25倍速）に減速する設定に変更 */
+        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 4>;
     };
 
     /* 誤動作を防ぎつつ、動く向きも正しく修正（レイヤー6の時はここを通らないように制限） */
     automouse {
-        layers = <0 1 2 3 4 5>; /* 👈 レイヤー6の時はこのオートマウス処理を完全にスルーさせます */
+        layers = <0 1 2 3 4 5>;
         input-processors = 
             <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
             <&zip_xy_scaler 1 2>, 
