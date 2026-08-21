@@ -2,21 +2,24 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-/* トラックボールの入力処理設定 */
+/* もともとある設定の書き換え */
 &pointing_listener {
     input-processors = 
-        <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        <&zip_temp_layer 5 1500>,
-        <&zip_xy_scaler 3 4>; /* 👈 リストの最後なので、末尾のカンマを外してきれいに閉じました */
+        <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 
-    /* レイヤー6のときだけスクロールにする設定 */
+    /* 👇 ここを分離：ちょっと触れただけではレイヤー5に行かないように防壁（2ピクセル以下の微振動をカット）を設置 */
+    automouse {
+        input-processors = <&zip_xy_scaler 1 2>, <&zip_temp_layer 5 1500>;
+    };
+
+    /* レイヤー3のときだけスクロールにする設定 */
     scroller {
-        layers = <6>;
-        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 4>; /* 👈 スクロール速度を4分の1に落とす設定 */
+        layers = <3>;
+        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 1>;
     };
 };
 
-/* 古い命令を無効化（上書き） */
+/* エラーの原因になっている古い命令を、空っぽにして無oggle化（上書き）する */
 / {
     /delete-property/ automouse-layer;
 };
