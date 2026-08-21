@@ -9,9 +9,9 @@
         <&zip_temp_layer 5 1500>,
         <&zip_xy_scaler 3 4>; /* 👈 リストの最後なので、末尾のカンマを外してきれいに閉じました */
 
-    /* レイヤー3のときだけスクロールにする設定 */
+    /* レイヤー6のときだけスクロールにする設定 */
     scroller {
-        layers = <3>;
+        layers = <6>;
         input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 4>; /* 👈 スクロール速度を4分の1に落とす設定 */
     };
 };
