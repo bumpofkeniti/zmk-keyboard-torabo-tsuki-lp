@@ -7,19 +7,19 @@
     input-processors = 
         <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 
-    /* 誤動作を防ぎつつ、動く向きも正しく修正 */
+    /* 👇 修正：最優先にするため、scroller（レイヤー6）の設定を一番上に持ってきました */
+    scroller {
+        layers = <6>;
+        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 1>;
+    };
+
+    /* 誤動作を防ぎつつ、動く向きも正しく修正（レイヤー6の時はここを通らないように制限） */
     automouse {
-        layers = <0 1 2 3 4 5>;
+        layers = <0 1 2 3 4 5>; /* 👈 レイヤー6の時はこのオートマウス処理を完全にスルーさせます */
         input-processors = 
             <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
             <&zip_xy_scaler 1 2>, 
             <&zip_temp_layer 5 1500>;
-    };
-
-    /* 👇 修正：レイヤー3を廃止し、レイヤー6のときだけスクロールにする設定 */
-    scroller {
-        layers = <6>; /* 👈 3を消して 6 だけに指定しました */
-        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 1>;
     };
 };
 
