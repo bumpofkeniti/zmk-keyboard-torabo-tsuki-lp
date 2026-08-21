@@ -118,11 +118,11 @@
 
         layer_2 {
             bindings = <
-&trans        &trans        &trans           &trans           &trans           &trans                      &trans  &trans  &trans  &trans  &trans  &trans
-&kp CAPSLOCK  &kp PLUS      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp SLASH                   &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_SEL 0  &kp MINUS     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp COLON   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_SEL 1  &kp ASTERISK  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_SEL 2  &kp EQUAL     &kp KP_NUMBER_0  &none            &trans           &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans        &trans        &trans           &trans           &trans           &trans                         &trans  &trans  &trans  &trans  &trans  &trans
+&kp CAPSLOCK  &kp PLUS      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_DIVIDE                  &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_SEL 0  &kp MINUS     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp COLON      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_SEL 1  &kp ASTERISK  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_SEL 2  &kp EQUAL     &kp KP_NUMBER_0  &none            &trans           &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
