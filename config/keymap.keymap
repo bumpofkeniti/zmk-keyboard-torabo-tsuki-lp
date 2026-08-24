@@ -26,35 +26,35 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp N8 &kp N6 &kp N0 &kp N2 &kp N2 &kp N1>;
-            label = "PASS";
+            label = "birth";
         };
 
         PIT: PIT {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(P) &kp LS(I) &kp LS(T) &kp N0 &kp N4 &kp N0 &kp N1 &kp N1>;
-            label = "P1";
+            label = "PIT";
         };
 
         ID: ID {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp N5 &kp N0 &kp N8 &kp N5 &kp N3 &kp N5 &kp N0 &kp N0>;
-            label = "P1";
+            label = "ID";
         };
 
         AGV1: AGV1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N1 &kp A &kp G &kp V &kp POUND>;
-            label = "P1";
+            label = "AGV1";
         };
 
         AGV2: AGV2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N6 &kp A &kp G &kp V &kp POUND>;
-            label = "P2";
+            label = "AGV2";
         };
 
         AGV3: AGV3 {
@@ -68,14 +68,14 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N8 &kp A &kp G &kp V &kp POUND>;
-            label = "P4";
+            label = "AGV4";
         };
 
         AGV5: AGV5 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N9 &kp A &kp G &kp V &kp POUND>;
-            label = "P5";
+            label = "AGV5";
         };
 
         AGV6: AGV6 {
