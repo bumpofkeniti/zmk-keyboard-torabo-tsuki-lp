@@ -139,7 +139,7 @@
         layer_4 {
             bindings = <
 &trans  &trans   &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&PITID  &kp TAB  &birth  &PITID  &ID     &AGV1                   &AGV2   &AGV2   &AGV3   &AGV4   &AGV5   &AGV6
+&PITID  &kp TAB  &birth  &PIT    &ID     &AGV1                   &AGV2   &AGV3   &AGV4   &AGV5   &AGV6   &none
 &trans  &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
