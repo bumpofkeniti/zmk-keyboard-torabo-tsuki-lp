@@ -2,10 +2,11 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-/* 完璧に動作していた元のシンプルな設定に戻します */
+/* &pointing_listener の中身を調整し、全体（カーソル移動）の速度を半分にします */
 &pointing_listener {
     input-processors = 
         <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+        <&zip_xy_scaler 1 2>, /* 👈 追加：全体のカーソル速度を「半分（1/2）」に落とします */
         <&zip_temp_layer 5 1500>;
 
     /* レイヤー6のときだけスクロールにする設定（4分の1速度） */
