@@ -19,7 +19,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(P) &kp LS(I) &kp LS(T) &kp N0 &kp N4 &kp N0 &kp N1 &kp N1 &kp AT &kp B &kp P &kp R &kp DOT &kp B &kp T &kp M &kp DOT &kp C &kp O &kp DOT &kp J &kp P>;
-            label = "PIT";
+            label = "PITID";
         };
 
         birth: birth {
@@ -61,7 +61,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp POUND &kp LS(A) &kp LS(G) &kp LS(V) &kp N7 &kp N7 &kp N6 &kp N9 &kp N7 &kp A &kp G &kp V &kp POUND>;
-            label = "P3";
+            label = "AGV3";
         };
 
         AGV4: AGV4 {
