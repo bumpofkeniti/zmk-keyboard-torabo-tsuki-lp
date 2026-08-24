@@ -13,13 +13,12 @@
         input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 4>;
     };
 
-    /* ポインター速度は落とさず、発動のしきい値（最低移動距離）だけを引き上げる */
+    /* 触れてから「ワンテンポ（200ミリ秒）」連続して動かした時だけ発動する設定 */
     automouse {
         layers = <0 1 2 3 4 5>;
         input-processors = 
             <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-            <&zip_xy_thresher 8 8>, /* 👈 変更点：X軸・Y軸ともに「8」以上の大きな動きだけを検知する */
-            <&zip_temp_layer 5 1500>;
+            <&zip_temp_layer 5 1500 200>; /* 👈 修正：末尾に「200」を追加 */
     };
 };
 
@@ -39,3 +38,4 @@
 &size_l_transform {
     col-offset = <7>;
 };
+
