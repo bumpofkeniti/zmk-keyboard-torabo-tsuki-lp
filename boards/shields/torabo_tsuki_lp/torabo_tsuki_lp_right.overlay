@@ -10,16 +10,15 @@
     /* 最優先にするため、scroller（レイヤー6）の設定を一番上に配置 */
     scroller {
         layers = <6>;
-        /* 👇 修正：8分の1速度に減速する設定に変更 */
-        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 8>;
+        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 4>;
     };
 
-    /* 誤動作を防ぎつつ、動く向きも正しく修正（レイヤー6の時はここを通らないように制限） */
+    /* ポインター速度は落とさず、発動のしきい値（最低移動距離）だけを引き上げる */
     automouse {
         layers = <0 1 2 3 4 5>;
         input-processors = 
             <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-            <&zip_xy_scaler 1 2>, 
+            <&zip_xy_thresher 8 8>, /* 👈 変更点：X軸・Y軸ともに「8」以上の大きな動きだけを検知する */
             <&zip_temp_layer 5 1500>;
     };
 };
