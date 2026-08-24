@@ -2,23 +2,16 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-/* もともとある設定の書き換え */
+/* 完璧に動作していた元のシンプルな設定に戻します */
 &pointing_listener {
     input-processors = 
-        <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+        <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+        <&zip_temp_layer 5 1500>;
 
-    /* 最優先にするため、scroller（レイヤー6）の設定を一番上に配置 */
+    /* レイヤー6のときだけスクロールにする設定（4分の1速度） */
     scroller {
         layers = <6>;
         input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 4>;
-    };
-
-    /* 快適なポインタ速度で動く元のオートマウス設定 */
-    automouse {
-        layers = <0 1 2 3 4 5>;
-        input-processors = 
-            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-            <&zip_temp_layer 5 1500>;
     };
 };
 
