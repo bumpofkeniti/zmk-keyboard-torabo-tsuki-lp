@@ -1,22 +1,22 @@
-
 #include "torabo_tsuki_lp.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-/* &pointing_listener の中身を調整し、レイヤー6の左右スクロールのみ反転します */
+/* &pointing_listener の中身を調整し、発動条件を100ピクセル以上に引き上げます */
 &pointing_listener {
     input-processors = 
         <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
         <&zip_xy_scaler 1 2>, 
-        <&zip_temp_layer 5 1500>;
+        /* 👇 修正：末尾に「100」を追加して、発動に必要なピクセル数を指定 */
+        <&zip_temp_layer 5 1000 100>; 
 
-    /* レイヤー6のときだけスクロールにする設定（左右のみ反転・3分の1速度） */
+    /* レイヤー6のときだけスクロールにする設定（左右のみ反転・4分の1速度） */
     scroller {
         layers = <6>;
         input-processors = 
-            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>, /* 👈 追加：左右の信号だけをここで反転させる */
+            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>, 
             <&zip_xy_to_scroll_mapper>, 
-            <&zip_scroll_scaler 1 3>;
+            <&zip_scroll_scaler 1 4>;
     };
 };
 
@@ -36,5 +36,3 @@
 &size_l_transform {
     col-offset = <7>;
 };
-
-
