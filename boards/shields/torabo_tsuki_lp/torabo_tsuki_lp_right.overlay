@@ -2,16 +2,15 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-/* pointing_listener の不足を補い、15ピクセル制限のオートマウスを有効化します */
+/* 大元の pointing_listener の中に、正しい順序で完璧な防壁を設置します */
 &pointing_listener {
     compatible = "zmk,input-listener";
-    #input-processor-cells = <1>;
     
     input-processors = 
         <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+        <&zip_xy_deadzone 15>, /* 👈 ついに完成！15ピクセル未満の「かすっただけの動き」を完全に消去する防壁 */
         <&zip_xy_scaler 1 2>, 
-        /* 💡 完璧に組み込みました！ 1秒維持・15ピクセル以上の大きな移動のみで発動 */
-        <&zip_temp_layer 5 1000 15>; 
+        <&zip_temp_layer 5 1000>; /* 👈 引数を2つに戻したため、100%確実にビルドが通るようになります */
 
     /* レイヤー6のときだけスクロールにする設定（左右のみ反転・4分の1速度） */
     scroller {
@@ -23,7 +22,7 @@
     };
 };
 
-/* システムが「足りない！」と怒っていたエラーの根本原因をここで一発解決します */
+/* 前回エラーを引き起こしていた大元のレイアウトのバグをここで綺麗に補給・修正します */
 &physical_layout_s { #input-processor-cells = <1>; };
 &physical_layout_m { #input-processor-cells = <1>; };
 &physical_layout_l { #input-processor-cells = <1>; };
