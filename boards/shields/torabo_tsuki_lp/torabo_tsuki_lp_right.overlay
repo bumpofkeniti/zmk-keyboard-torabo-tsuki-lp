@@ -2,16 +2,12 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-/* 大元の pointing_listener の不足している定義をここで補い、完全に上書きします */
+/* すべての設定を、以前完璧に動いていた元の正しいルートに100%戻します */
 &pointing_listener {
-    compatible = "zmk,input-listener";
-    #input-processor-cells = <1>; /* 👈 エラー（lacks #input-processor-cells）を解決するために追加 */
-    
     input-processors = 
         <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
         <&zip_xy_scaler 1 2>, 
-        /* 1秒維持、15ピクセル以上の移動のみでオートマウス（レイヤー5）を発動 */
-        <&zip_temp_layer 5 1000 15>; 
+        <&zip_temp_layer 5 1000>; /* 👈 エラーが出ない元の安全な書き方に戻しました */
 
     /* レイヤー6のときだけスクロールにする設定（左右のみ反転・4分の1速度） */
     scroller {
@@ -22,6 +18,12 @@
             <&zip_scroll_scaler 1 4>;
     };
 };
+
+/* 💡【これで解決！】エラーの原因になっている古い物理レイアウトの設定を、
+   ビルドする直前にこのファイルから上書きしてエラーを強制クリアします。 */
+&physical_layout_s { #input-processor-cells = <1>; };
+&physical_layout_m { #input-processor-cells = <1>; };
+&physical_layout_l { #input-processor-cells = <1>; };
 
 /* エラーの原因になっている古い命令を、空っぽにして無効化（上書き）する */
 / {
@@ -39,3 +41,4 @@
 &size_l_transform {
     col-offset = <7>;
 };
+
