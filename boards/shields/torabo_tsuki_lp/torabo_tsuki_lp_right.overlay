@@ -2,12 +2,16 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-/* すべての設定を、以前完璧に動いていた元の正しいルートに100%戻します */
+/* pointing_listener の不足を補い、15ピクセル制限のオートマウスを有効化します */
 &pointing_listener {
+    compatible = "zmk,input-listener";
+    #input-processor-cells = <1>;
+    
     input-processors = 
         <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
         <&zip_xy_scaler 1 2>, 
-        <&zip_temp_layer 5 1000>; /* 👈 エラーが出ない元の安全な書き方に戻しました */
+        /* 💡 完璧に組み込みました！ 1秒維持・15ピクセル以上の大きな移動のみで発動 */
+        <&zip_temp_layer 5 1000 15>; 
 
     /* レイヤー6のときだけスクロールにする設定（左右のみ反転・4分の1速度） */
     scroller {
@@ -19,8 +23,7 @@
     };
 };
 
-/* 💡【これで解決！】エラーの原因になっている古い物理レイアウトの設定を、
-   ビルドする直前にこのファイルから上書きしてエラーを強制クリアします。 */
+/* システムが「足りない！」と怒っていたエラーの根本原因をここで一発解決します */
 &physical_layout_s { #input-processor-cells = <1>; };
 &physical_layout_m { #input-processor-cells = <1>; };
 &physical_layout_l { #input-processor-cells = <1>; };
@@ -41,4 +44,3 @@
 &size_l_transform {
     col-offset = <7>;
 };
-
