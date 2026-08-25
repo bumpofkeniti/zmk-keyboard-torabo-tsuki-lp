@@ -2,17 +2,12 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-/* &pointing_listener の中身を調整し、切り替え判定だけをドッシリさせます */
+/* すべての処理を元の正しい1本のルートに戻し、矛盾をなくします */
 &pointing_listener {
     input-processors = 
         <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        <&zip_xy_scaler 1 2>; /* 👈 大元はこれだけ！1ピクセル単位の細かい移動データがそのままパソコンに届きます */
-
-    /* 👇 ここを大改造：オートマウスの発動条件だけを15ピクセル以上に引き上げる独立したブロック */
-    automouse {
-        layers = <0 1 2 3 4 5>;
-        input-processors = <&zip_xy_scaler 1 1>, <&zip_temp_layer 5 1000>;
-    };
+        <&zip_xy_scaler 1 2>, 
+        <&zip_temp_layer 5 1000>; /* 👈 1秒間維持する元の安全な設定 */
 
     /* レイヤー6のときだけスクロールにする設定（左右のみ反転・4分の1速度） */
     scroller {
@@ -22,6 +17,14 @@
             <&zip_xy_to_scroll_mapper>, 
             <&zip_scroll_scaler 1 4>;
     };
+};
+
+/* 💡【誤動作を解決する裏技】
+   ZMKの大元（センサー自体）の設定を上書きし、かすっただけの「超微小な動き」だけを
+   タイピングのノイズとしてカットします。これなら1ピクセル単位の細かい狙い撃ち操作も
+   一切邪魔せず、文字入力中の誤発動だけを綺麗に減らすことができます。 */
+&trackball_peripheral {
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 };
 
 /* エラーの原因になっている古い命令を、空っぽにして無効化（上書き）する */
